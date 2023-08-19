@@ -8,9 +8,10 @@ def generate_readme(directory="."):
 
     with open("README.md", "w") as readme:
         readme.write(f"# {readme_title}\n\n")
-        
+        descriptions = []
         for filename in files:
             description = input(f"Enter description for {filename}: ")
+            descriptions.append(description)
             readme.write(f"- [{filename}]({filename}): {description}\n")
         
         if files and subdirectories:
@@ -21,6 +22,10 @@ def generate_readme(directory="."):
             sub_readme_title = os.path.basename(os.path.abspath(subdirectory))
             readme.write(f"## {sub_readme_title}\n\n")
             readme.write(f"See [{sub_readme_title}/README.md]({sub_readme_title}/README.md) for details.\n\n")
+
+            with open("{subdirectory}/README.md")as current:
+                current.write(i for i in descriptions)
+                
 
 if __name__ == "__main__":
     generate_readme()
