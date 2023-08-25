@@ -31,7 +31,7 @@ $$ a_{n-1} = \frac{v_{n-1} - v_{n-2}}{dt} $$
 
 A sample dataset `v` with values from `1` to `20` and `dt=0.2` is used to compute and display the results.
 <br>
-Credit to this video and khanacademy for teaching this to me
+Credit to this video and khanacademy for teaching this to me:
 <a>https://www.youtube.com/watch?v=Jqa-aFE9-GI</a>
 
 ## Fib iteratively
