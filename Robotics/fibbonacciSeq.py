@@ -3,7 +3,7 @@ def fibonacci(n):
     a = 0
     b = 1
     if n < 0:
-        return 0
+        raise("Error, fib only works w the positive terms")
     elif n == 0:
         return a
     elif n == 1:
