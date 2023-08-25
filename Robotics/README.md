@@ -15,7 +15,8 @@ the central differences algorithm or similar with python
 
 This code performs two calculations using the set of instantaneous velocity measurements, `v`, taken at intervals `dt`:
 1. **dist calc**: The approx distance `d` traveled by the rocket is calculated using discrete integration:
-⌄ formula ⌄
+formula:
+
 \[ d = \sum_{i=0}^{n-1} v_i \times dt \]
 
 1. **acceleration calcs**: The instantaneous acceleration `a` (derivative) is approximated. it cant be found normally cus its a discrete set of terms, and not a continues function. I used the central differences formula which can approx the derivative of a broken (discrete) line:
