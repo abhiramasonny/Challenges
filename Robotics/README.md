@@ -2,7 +2,7 @@
 
 This directory contains the challenges I solved for robotics, and a description on how they work and the maths behind it.
 
-## Rocket.py
+## Rocket
 
 Problem: 
 ```
@@ -46,3 +46,12 @@ Ummm so i litteraly just realized that this was a factorial, but my code uses a 
 1. **init** the `ans` variable
 2. **loop** through all natural numbers up until `20`
 3. **multiply ans** by itself
+
+## Sumation
+Expand this summation:
+
+$$ \sum_{n=1}^{100}n $$ 
+
+I used the basic summation formula. 
+
+$$ \ \sum_{n=1}^{N} n = \frac{N(N + 1)}{2} \ $$
