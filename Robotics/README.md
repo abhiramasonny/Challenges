@@ -61,12 +61,9 @@ $$ \ \sum_{n=1}^{N} n = \frac{N(N + 1)}{2} \ $$
 **exactly what i couldn't do on spot...**
 1. Setup
    look at the part of a unit circle on the first quadrant with radius *r* inside a square of side *r*. 
-   The area of the quarter circle is 
+   The area of the **quarter** circle is 
 
 $$ \ \frac{\pi r^2}{4} \ $$
-
-   *its /4 cus its only first quadrant*, and
-   the area of the square is r^2
 
 2. random part: 
     gen *N* random points inside the square. 
