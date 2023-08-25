@@ -30,3 +30,13 @@ $$ a_0 = \frac{v_1 - v_0}{dt} $$
 $$ a_{n-1} = \frac{v_{n-1} - v_{n-2}}{dt} $$
 
 A sample dataset `v` with values from `1` to `20` and `dt=0.2` is used to compute and display the results.
+
+## Fib iteratively
+
+The iterative method involves using a loop to compute the Fibonacci series, unlike the recursive method which repeatedly calls itself.
+
+1. **init** two variables, `a` and `b`, to represent the first two fib nums (`0`, `1`).
+2. **loop** from `2` to `n`:
+   - calc the next fib num as the sum of `a` and `b`.
+   - mov the value of `b` to `a`, and the sum to `b`.
+3. **return** the value of `b` after the loop ends, which is the `n-th` fib num.
