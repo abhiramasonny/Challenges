@@ -1,8 +1,7 @@
 class Calculator:
     def __init__(self):
         print("This is a calculator application utilizing OOPS coded in python. This is a beginner project.")
-    
-    def start(self):
+
         self.takeInput()
         if self.operation == '*':
             self.mul()
@@ -39,4 +38,3 @@ class Calculator:
             self.answer = self.num1 / self.num2
 
 calcObj = Calculator()
-calcObj.start()
