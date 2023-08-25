@@ -14,8 +14,9 @@ the central differences algorithm or similar with python
 ```
 
 This code performs two calculations using the set of instantaneous velocity measurements, `v`, taken at intervals `dt`:
-1. **dist calc**: The approx distance `d` traveled by the rocket is calculated using discrete integration:
-formula:
+1. **dist calc**: The approx distance `d` traveled by the rocket is calculated using discrete integration.
+<br>
+Formula:
 
 $$ d = \sum_{i=0}^{n-1} v_i \times dt $$
 
