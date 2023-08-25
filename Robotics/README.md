@@ -80,11 +80,14 @@ $$ \ \frac{\frac{\pi r^2}{4}}{r^2} = \frac{\pi}{4} \ $$
 4. guess pi:
 The ratio of the number of points inside the circle to the 
 total num of points is:
-    $$ \ \frac{M}{N} \ $$
 
-   So u can write  
+$$ \ \frac{M}{N} \ $$
+
+So u can write  
+
 $$ \ \frac{M}{N} \approx \frac{\pi}{4} \ $$
 
 5. guess n:
 u can derive the value of pi:
+
 $$ \ \pi \approx 4 \times \frac{M}{N} \ $$
