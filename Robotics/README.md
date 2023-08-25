@@ -33,7 +33,7 @@ A sample dataset `v` with values from `1` to `20` and `dt=0.2` is used to comput
 
 ## Fib iteratively
 
-The iterative method involves using a loop to compute the Fibonacci series, unlike the recursive method which repeatedly calls itself.
+The iterative method involves using a loop to compute the Fibonacci series, unlike the recursive method which repeatedly calls itself (sids idea).
 
 1. **init** two variables, `a` and `b`, to represent the first two fib nums (`0`, `1`).
 2. **loop** from `2` to `n`:
