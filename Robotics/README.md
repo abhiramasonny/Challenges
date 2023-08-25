@@ -42,7 +42,7 @@ The iterative method involves using a loop to compute the Fibonacci series, unli
 3. **return** the value of `b` after the loop ends, which is the `n-th` fib num.
 
 ## Mul 20 nat nums
-Ummm so i basicly just realized that this was a factorial, but my code uses a for loop.
+Ummm so i litteraly just realized that this was a factorial, but my code uses a for loop.
 1. **init** the `ans` variable
 2. **loop** through all natural numbers up until `20`
 3. **multiply ans** by itself
