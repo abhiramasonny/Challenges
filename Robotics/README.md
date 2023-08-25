@@ -20,7 +20,7 @@ Formula:
 
 $$ d = \sum_{i=0}^{n-1} v_i \times dt $$
 
-1. **acceleration calcs**: The instantaneous acceleration `a` (derivative) is approximated. it cant be found normally cus its a discrete set of terms, and not a continues function. I used the central differences formula which can approx the derivative of a broken (discrete) line:
+2. **acceleration calcs**: The instantaneous acceleration `a` (derivative) is approximated. it cant be found normally cus its a discrete set of terms, and not a continues function. I used the central differences formula which can approx the derivative of a broken (discrete) line:
 
 $$  a_i = \frac{v_{i+1} - v_{i-1}}{2 \times dt} $$
 
