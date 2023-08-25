@@ -55,3 +55,39 @@ $$ \sum_{n=1}^{100}n $$
 I used the basic summation formula. 
 
 $$ \ \sum_{n=1}^{N} n = \frac{N(N + 1)}{2} \ $$
+
+## Pi with random digits (derivation)
+
+**exactly what i couldn't do on spot...**
+1. Setup
+   - look at the part of a unit circle on the first quadrant with radius *r* inside a square of side *r*. 
+   - The area of the quarter circle is 
+   $$ \ \frac{\pi r^2}{4} \ $$
+   - *its /4 cus its only first quadrant*
+   - The area of the square is r^2
+
+2. random part: 
+   - gen *N* random points inside the square. 
+   - Let *M* be the number of points that are inside the circle. *only first quadrant*.
+
+3. Ratios:
+   - The ratio of the area of the circle to area of square is 
+     $$ \
+     \frac{\frac{\pi r^2}{4}}{r^2} = \frac{\pi}{4}
+     \ $$
+
+4. guess pi:
+   - The ratio of the number of points inside the circle to the total num of points is:
+    $$ \
+     \frac{M}{N}
+     \ $$
+   - So u can write  
+     $$ \
+     \frac{M}{N} \approx \frac{\pi}{4}
+     \ $$
+
+5. guess n:
+   - u can derive the value of pi:
+     $$ \
+     \pi \approx 4 \times \frac{M}{N}
+     \ $$
