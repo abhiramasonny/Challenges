@@ -1,6 +1,6 @@
 # About
 
-This directory contains the challenges I solved for robotics.
+This directory contains the challenges I solved for robotics, and a description on how they work and the maths behind it.
 
 ## Rocket.py
 
