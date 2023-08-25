@@ -1,4 +1,4 @@
-# Calculate the Nth fib term
+# Calculate the 50th fib term
 def fibonacci(n):
     a = 0
     b = 1
