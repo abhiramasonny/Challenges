@@ -40,3 +40,9 @@ The iterative method involves using a loop to compute the Fibonacci series, unli
    - calc the next fib num as the sum of `a` and `b`.
    - mov the value of `b` to `a`, and the sum to `b`.
 3. **return** the value of `b` after the loop ends, which is the `n-th` fib num.
+
+## Mul 20 nat nums
+Ummm so i basicly just realized that this was a factorial, but my code uses a for loop.
+1. **init** the `ans` variable
+2. **loop** through all natural numbers up until `20`
+3. **multiply ans** by itself
