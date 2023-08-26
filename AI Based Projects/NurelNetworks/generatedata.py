@@ -9,7 +9,6 @@ def logical_system(input1, input2, input3, input4, input5, input6, input7, input
     final = not combined3
     return final
 
-# Generate the truth table
 with open("data.csv", "w") as f:
     f.write("input1,input2,input3,input4,input5,input6,input7,input8,target\n")
     for input1 in [0, 1]:
