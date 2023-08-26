@@ -86,7 +86,7 @@ hidden_size = 4
 nn = Network(input_size=input_size, hidden_size=hidden_size, output_size=output_size)
 
 learning_rate = 0.5
-epochs = 10000
+epochs = 1000
 
 nn.train(input_data, target_data, learning_rate, epochs)
 
