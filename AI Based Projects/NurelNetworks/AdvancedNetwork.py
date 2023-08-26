@@ -1,11 +1,6 @@
 import numpy as np
-import math
 import pandas as pd
 import matplotlib.pyplot as plt
-import pygame
-import sys
-
-pygame.init()
 
 class Network:
     def __init__(self, input_size, hidden_size, output_size):
@@ -77,47 +72,6 @@ class Network:
         plt.ylabel('Loss')
         plt.title('Loss Over Epochs')
         plt.show()
-    
-    def visualize_network(self):
-        screen_size = (800, 600)
-        screen = pygame.display.set_mode(screen_size)
-        clock = pygame.time.Clock()
-        
-        running = True
-        while running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-            
-            screen.fill((0, 0, 0)) 
-            
-            for i in range(self.input_size):
-                for j in range(self.hidden_size):
-                    weight = self.weights_input_hidden[i][j]
-                    pygame.draw.line(screen, (255, 255, 255), (i * 150 + 50, 50), (j * 150 + 50, 200), 2)
-                    font = pygame.font.Font(None, 15)
-                    weight_text = font.render(f'{weight:.2f}', True, (190, 190, 190))
-                    screen.blit(weight_text, ((i * 150 + j * 150) / 2 + 35, 125))
-            
-            for i in range(self.hidden_size):
-                weight = self.weights_hidden_output[i][0]
-                pygame.draw.line(screen, (255, 255, 255), (i * 150 + 50, 200), (400, 400), 2)
-                font = pygame.font.Font(None, 24)
-                weight_text = font.render(f'{weight:.2f}', True, (190, 190, 190))
-                screen.blit(weight_text, ((i * 150 + 400) / 2 + 35, 300))
-            
-            # Draw neurons
-            for i in range(self.input_size):
-                pygame.draw.circle(screen, (255, 255, 255), (i * 150 + 50, 50), 30)
-            for i in range(self.hidden_size):
-                pygame.draw.circle(screen, (255, 255, 255), (i * 150 + 50, 200), 30)
-            pygame.draw.circle(screen, (255, 255, 255), (400, 400), 30)
-            
-            pygame.display.flip()
-            clock.tick(30)
-        
-        pygame.quit()
-        sys.exit()
 
 data = pd.read_csv("data.csv")
 input_columns = list(data.columns)[:-1]
@@ -139,4 +93,3 @@ nn.train(input_data, target_data, learning_rate, epochs)
 for i in range(len(input_data)):
     predicted = nn.feedforward(input_data[i])
     print("Input:", input_data[i], "Target:", target_data[i], "Predicted:", predicted)
-nn.visualize_network()

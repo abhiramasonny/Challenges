@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains projects, challenges, and problems related to different areas of computer science and programming. The contents are organized into different directories, each serving a specific purpose.
+This repository contains projects, challenges, and problems related to different areas of computer science and programming.
 
 ## Directory Structure
 
@@ -14,7 +14,7 @@ This repository contains projects, challenges, and problems related to different
   - **NurelNetworks:** This subdirectory contains neural network implementations.
     - `AdvancedNetwork.py`: Implementation of an advanced neural network.
     - `MathBasedNuralNetwork.py`: Implementation of a math-based neural network.
-    - `data.csv`: Dummy data for network training.
+    - `data.csv`: random data for network training.
 
 - **Challenges Written in C:** This directory contains C programs for various programming challenges.
   - **Dynamic Programming:**
