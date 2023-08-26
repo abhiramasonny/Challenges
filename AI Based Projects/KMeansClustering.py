@@ -14,8 +14,8 @@ def kmeans(X, k, max_iters=100):
     
     return centroids, labels
 
-X = np.array([[1, 2], [2, 3], [8, 7], [9, 8], [10, 9]])
-k = 2
+X = np.array([[1, 2], [2, 3], [8, 7], [9, 8], [10, 9], [18, 8], [19, 9]])
+k = 3
 centroids, labels = kmeans(X, k)
 print("Centroids:", centroids)
 print("Labels:", labels)
