@@ -38,5 +38,4 @@ This repository contains projects, challenges, and problems related to different
 - **Project Ideas:** Still under work...
 
 - **Robotics:** This directory contains the scripts I used to solve some robotics challenges presented to me.
-<br>
-Look at `Robotics/README.md` for further info
+- Look at `Robotics/README.md` for further info
