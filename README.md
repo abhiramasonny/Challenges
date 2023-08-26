@@ -37,16 +37,6 @@ This repository contains projects, challenges, and problems related to different
 
 - **Project Ideas:** Still under work...
 
-## Usage
+- **Robotics:** This directory contains the scripts I used to solve some robotics challenges presented to me.
 
-You can navigate to specific directories to explore the projects, challenges, and problems in this repository. Each directory contains its own set of files, including code and data where applicable.
-
-Feel free to explore, use, and modify the code as needed for your learning and projects.
-
-## License
-
-This repository is provided under the [MIT License](LICENSE). You are free to use the code in this repository for personal and educational purposes.
-
-If you find any issues or have suggestions, please feel free to open an issue or submit a pull request.
-
-Happy coding!
+Look at `Robotics/README.md` for further info
