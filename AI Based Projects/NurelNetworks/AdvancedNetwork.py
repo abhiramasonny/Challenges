@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import math
 
 class Network:
     def __init__(self, input_size, hidden_size, output_size):
@@ -91,5 +92,5 @@ epochs = 1000
 nn.train(input_data, target_data, learning_rate, epochs)
 
 for i in range(len(input_data)):
-    predicted = nn.feedforward(input_data[i])
+    predicted = math.round(nn.feedforward(input_data[i]))
     print("Input:", input_data[i], "Target:", target_data[i], "Predicted:", predicted)
