@@ -6,7 +6,9 @@ def logical_system(input1, input2, input3, input4, input5, input6, input7, input
     combined2 = combined and result3
     result4 = not (input7 and input8)
     combined3 = not (combined2 or result4)
+    result5 = input7 or not input6 and result3
     final = not combined3
+    final = final and result5
     return final
 
 with open("data.csv", "w") as f:

@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import math
 
 class Network:
     def __init__(self, input_size, hidden_size, output_size):
@@ -75,22 +74,35 @@ class Network:
         plt.show()
 
 data = pd.read_csv("data.csv")
+tdata = pd.read_csv("test.csv")
 input_columns = list(data.columns)[:-1]
 target_column = list(data.columns)[-1]
+
+tinput_columns = list(tdata.columns)[:-1]
+ttarget_column = list(tdata.columns)[-1]
+
 input_data = data[input_columns].values
 target_data = data[target_column].values.reshape(-1, 1)
+tinput_data = tdata[tinput_columns].values
+ttarget_data = tdata[ttarget_column].values.reshape(-1, 1)
 
 input_size = len(input_columns)
 output_size = 1
 hidden_size = 4
 
+tinput_size = len(tinput_columns)
+toutput_size = 1
+thidden_size = 4
+
 nn = Network(input_size=input_size, hidden_size=hidden_size, output_size=output_size)
 
 learning_rate = 0.5
-epochs = 1000
+epochs = 500
 
 nn.train(input_data, target_data, learning_rate, epochs)
 
-for i in range(len(input_data)):
-    predicted = math.round(nn.feedforward(input_data[i]))
-    print("Input:", input_data[i], "Target:", target_data[i], "Predicted:", predicted)
+for i in range(len(tinput_data)):
+    predicted = nn.feedforward(tinput_data[i])
+    predicted = float(predicted)
+    predicted = round(predicted)
+    print("Input:", tinput_data[i], "Target:", ttarget_data[i], "Predicted:", predicted)
