@@ -15,8 +15,6 @@ This repository contains projects, challenges, and problems related to different
     - `AdvancedNetwork.py`: Implementation of an advanced neural network.
     - `MathBasedNuralNetwork.py`: Implementation of a math-based neural network.
     - `data.csv`: random data for network training.
-  - **GeneticAI:** This subdirectory contains genetic ai implementations.
-    - `roots.py` Code to maximize a function and get the roots (solutions) using a genetic AI.
 
 - **Challenges Written in C:** This directory contains C programs for various programming challenges.
   - **Dynamic Programming:**
