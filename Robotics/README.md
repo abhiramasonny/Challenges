@@ -47,7 +47,7 @@ So apprently i got to expand so...
 - **Distance calcs:**
   - the problem is: Given a set of discrete sequence of velocities at time intervals, how can u estimate the total distance traveled by the rocket?
   - solution: when u mul each velocity value with the time interval of `dt` and do a summation of it, u are essentially aprox the areas of several rectangles *integration*, each is representing a small segment of the journey. Summing these areas gives the total distance. The formula for this is also knwon as the reiman sum: 
-  
+
 $$ d = \sum_{i=0}^{n-1} v_i \times dt $$ 
 - **Acc calcs:**
   - problem is: how can u estimate how fast the velocity is changing (*accleration*)? This one was a lot harder for me...
@@ -55,6 +55,27 @@ $$ d = \sum_{i=0}^{n-1} v_i \times dt $$
 
 $$  a_i = \frac{v_{i+1} - v_{i-1}}{2 \times dt} $$
   
+## convolution
+
+```
+Given a set of numbers n (padded with zeros as needed), 
+compute the 1D averaging convolution with stride=1 and kernel size of k. 
+(ask Krishna for help).
+```
+
+This code solves the problem (i hated this problem btw.)
+
+1. **Padding**: i added som 0s as padding. this is relative to the kernel size.
+<br>
+Formula:
+
+$$ \ \text{paddingSize} = \frac{k - 1}{2} \ $$
+
+2. **Averaging Convolution**: i just take the dot product of both the vectors, and set it as the avrg.
+<br>
+Formula:
+
+$$ \ \text{averagedValue}_i = \sum_{j=0}^{k-1} \text{paddedData}_{i+j} \times \text{kernel}_j \ $$
 
 ## Fib iteratively
 
