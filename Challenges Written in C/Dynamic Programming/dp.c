@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define SIZE 200000000000
+#define SIZE 200000
 
 struct DataItem {
    int data;   
@@ -90,7 +90,6 @@ int fib(int n){
     item = search(n);
     if (n == 0) return  0;
     else if (n == 1) return 1;
-    else if (n == 2) return 1;
     else if (item != NULL){
       return item->data;
     } else {
@@ -106,7 +105,7 @@ int main(){
    dummyItem->data = -1;  
    dummyItem->key = -1; 
    int i = 0;
-   while (true){
+   for (size_t i = 0; i < 1000; i++) {
         int ans = fib(i);
         printf("%d\n", ans);
         i++;
