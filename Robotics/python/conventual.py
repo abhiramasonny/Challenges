@@ -21,7 +21,7 @@ def average_convolution(data, k):
 data = [2, 3, 4, 5, 6]
 ksize = 3
 convoluted_data = average_convolution(data, ksize)
-
+print(convoluted_data)
 plt.figure(figsize=(10, 6))
 plt.title('og data vs. conv data')
 plt.xlabel('Index')
