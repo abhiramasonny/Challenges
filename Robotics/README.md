@@ -75,8 +75,7 @@ $$ \ \text{paddingSize} = \frac{k - 1}{2} \ $$
 <br>
 Formula:
 
-$$ \text{averagedValue}_i = \sum_{j=0}^{k-1} \text{paddedData}_{i+j} \times \text{kernel}_j $$
-
+$$ \ \text{averagedValue}_i = \sum_{j=0}^{k-1} \text{paddedData}_{i+j} \times\text{kernel}_j \ $$
 
 ## Fib iteratively
 
