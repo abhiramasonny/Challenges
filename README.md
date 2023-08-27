@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains projects, challenges, and problems related to different areas of computer science and programming.
+This repository contains projects, challenges, and problems related to different areas of computer science and programming which I have fully implemented in their respective programming language *Most are in python tho*.
 
 ## Directory Structure
 
