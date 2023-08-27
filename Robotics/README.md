@@ -42,7 +42,7 @@ Credit to this video and khanacademy for teaching this to me:
 
 
 ### Expansion of the formula
-So apprently i got to 
+So apprently i got to expand so...
 
 - **Distance calcs:**
   - the problem is: Given a set of discrete sequence of velocities at time intervals, how can u estimate the total distance traveled by the rocket?
