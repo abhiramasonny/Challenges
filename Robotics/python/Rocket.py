@@ -15,7 +15,7 @@ def compute_acceleration(v, dt):
         a[i] = (v[i+1] - v[i-1]) / (2*dt)
         a[0] = (v[1] - v[0]) / dt
         a[n-1] = (v[n-1] - v[n-2]) / dt
-        return a
+    return a #fixed the indentation issue finally lmao
 v = [_ for _ in range(1,21)]
 dt = 0.2
 distance = compute_distance(v, dt)
