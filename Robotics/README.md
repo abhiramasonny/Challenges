@@ -96,6 +96,16 @@ u can derive the value of pi:
 
 $$ \ \pi \approx 4 \times \frac{M}{N} \ $$
 
+## Prime
+
+1. **init**:
+   just basic init func, getting the answer and the variable
+
+2. **check**:
+   - if `n` is less than 2, it's not a prime.
+   - If it's even and not 2, it's not a prime.
+   - if `n` is divisible by 3 and not 3 itself, it's not a prime`.
+   - then some big boi formula found online.
 
 ## Hello world
 
