@@ -47,6 +47,7 @@ So apprently i got to expand so...
 - **Distance calcs:**
   - the problem is: Given a set of discrete sequence of velocities at time intervals, how can u estimate the total distance traveled by the rocket?
   - solution: when u mul each velocity value with the time interval of `dt` and do a summation of it, u are essentially aprox the areas of several rectangles *integration*, each is representing a small segment of the journey. Summing these areas gives the total distance. The formula for this is also knwon as the reiman sum: 
+  
 $$ d = \sum_{i=0}^{n-1} v_i \times dt $$ 
 - **Acc calcs:**
   - problem is: how can u estimate how fast the velocity is changing (*accleration*)? This one was a lot harder for me...
