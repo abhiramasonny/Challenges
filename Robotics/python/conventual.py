@@ -4,7 +4,7 @@ compute the 1D averaging convolution with stride=1 and kernel size of k.
 """
 
 import matplotlib.pyplot as plt
-
+import math
 def average_convolution(data, k):
     kernel = [1/k for _ in range(k)]
     padding_size = (k - 1) // 2
@@ -18,8 +18,8 @@ def average_convolution(data, k):
     
     return res
 
-data = [2, 3, 4, 5, 6]
-ksize = 3
+data = [math.cos(_)*_ for _ in range(201)]
+ksize = 10
 convoluted_data = average_convolution(data, ksize)
 print(convoluted_data)
 plt.figure(figsize=(10, 6))
