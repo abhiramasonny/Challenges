@@ -72,10 +72,7 @@ Formula:
 $$ \ \text{paddingSize} = \frac{k - 1}{2} \ $$
 
 2. **Averaging Convolution**: i just take the dot product of both the vectors, and set it as the avrg.
-<br>
-Formula:
 
-$$ \ \text{averagedValue}_i = \sum_{j=0}^{k-1} \text{paddedData}_{i+j} \times\text{kernel}_j \ $$
 
 ## Fib iteratively
 
