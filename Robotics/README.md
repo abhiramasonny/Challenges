@@ -1,6 +1,11 @@
 # About
 
 This directory contains the challenges I solved for robotics, and a description on how they work and the maths behind it.
+<br>
+Organized into the directories
+
+ - Python
+ - Java
 
 ## Rocket
 
