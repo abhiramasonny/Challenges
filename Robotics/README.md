@@ -46,11 +46,14 @@ So apprently i got to expand so...
 
 - **Distance calcs:**
   - the problem is: Given a set of discrete sequence of velocities at time intervals, how can u estimate the total distance traveled by the rocket?
-  - solution: when u mul each velocity value with the time interval of `dt` and do a summation of it, u are essentially aprox the areas of several rectangles *integration*, each is representing a small segment of the journey. Summing these areas gives the total distance. The formula for this is: $$ d = \sum_{i=0}^{n-1} v_i \times dt $$ as stated above. This is also known as the reimann sum.
+  - solution: when u mul each velocity value with the time interval of `dt` and do a summation of it, u are essentially aprox the areas of several rectangles *integration*, each is representing a small segment of the journey. Summing these areas gives the total distance. The formula for this is: 
+  $$ d = \sum_{i=0}^{n-1} v_i \times dt $$ 
+  as stated above. This is also known as the reimann sum.
 - **Acc calcs:**
   - problem is: how can u estimate how fast the velocity is changing (*accleration*)? This one was a lot harder for me...
-  - my solution: i used the central differences method to approximate this rate of change (*derivitive*). For most velocity measurements besides the first and last *edge cases*, the acceleration is calculated by taking the difference between the subsequent and preceding velocities, and then dividing by twice the time interval, essentially calculating the slope or the rate of change over this period. this is what the central diffrences is calculating with the formula $$  a_i = \frac{v_{i+1} - v_{i-1}}{2 \times dt} $$
- but for the first and last velocities, i had to use the forward/backwards methods.
+  - my solution: i used the central differences method to approximate this rate of change (*derivitive*). For most velocity measurements besides the first and last *edge cases*, the acceleration is calculated by taking the difference between the subsequent and preceding velocities, and then dividing by twice the time interval, essentially calculating the slope or the rate of change over this period. this is what the central diffrences is calculating with the formula 
+  $$  a_i = \frac{v_{i+1} - v_{i-1}}{2 \times dt} $$
+  but for the first and last velocities, i had to use the forward/backwards methods.
 
 ## Fib iteratively
 
