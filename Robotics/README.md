@@ -77,6 +77,7 @@ Formula:
 
 $$ \ \text{averagedValue}_i = \sum_{j=0}^{k-1} \text{paddedData}_{i+j} \times \text{kernel}_j \ $$
 
+
 ## Fib iteratively
 
 The iterative method involves using a loop to compute the Fibonacci series, unlike the recursive method which repeatedly calls itself (sids idea).
