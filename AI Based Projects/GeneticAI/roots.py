@@ -1,21 +1,39 @@
 import random
-import math
+
 class GeneticAlgorithm:
-    def __init__(self, func, population_size, generations, mutation_rate, crossover_rate, mutation_scale):
+    def __init__(self, func, population_size, generations, mutation_rate, crossover_rate, mutation_scale, bit_length=32):
         self.func = func
         self.population_size = population_size
         self.generations = generations
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
         self.mutation_scale = mutation_scale
-        self.population = [random.uniform(-100, 100) for _ in range(self.population_size)]
+        self.bit_length = bit_length
+        self.population = [self.float_to_binary(random.uniform(-100, 100)) for _ in range(self.population_size)]
         self.fitness_cache = {}
         self.best_ever = None
 
     def cache_key(self, x):
         return (x, int(x * 10000))
 
-    def fitness(self, x):
+    def float_to_binary(self, value):
+        int_part = int(value)
+        frac_part = value - int_part
+        binary_int = format(int_part if int_part >= 0 else 256 + int_part, '08b')
+        binary_frac = format(int(frac_part * (2 ** (self.bit_length - 8))), f'0{self.bit_length - 8}b')
+        return binary_int + binary_frac
+
+    def binary_to_float(self, binary):
+        binary_int = binary[:8]
+        binary_frac = binary[8:]
+        int_part = int(binary_int, 2)
+        frac_part = int(binary_frac, 2) / (2 ** (self.bit_length - 8))
+        if int_part >= 128:
+            int_part -= 256
+        return int_part + frac_part
+
+    def fitness(self, binary_x):
+        x = self.binary_to_float(binary_x)
         key = self.cache_key(x)
         if key not in self.fitness_cache:
             self.fitness_cache[key] = max(abs(self.func(x)), round(abs(self.func(x)),3))
@@ -25,9 +43,15 @@ class GeneticAlgorithm:
         return min(random.choices(self.population, k=k), key=self.fitness)
 
     def double_point_crossover(self, parent1, parent2):
-        alpha, beta = sorted(random.sample(range(len(str(parent1))), 2))
+        alpha, beta = sorted(random.sample(range(len(parent1)), 2))
         child = parent1[:alpha] + parent2[alpha:beta] + parent1[beta:]
         return child
+
+    def mutate(self, binary):
+        index = random.randrange(len(binary))
+        mutated = list(binary)
+        mutated[index] = '1' if binary[index] == '0' else '0'
+        return ''.join(mutated)
 
     def evolve(self):
         stagnant_generations = 0
@@ -39,8 +63,9 @@ class GeneticAlgorithm:
                 self.best_ever = current_best
             else:
                 stagnant_generations += 1
-
-            if stagnant_generations > 0.1 * self.generations:
+            
+            current_best_fitness = self.fitness(current_best)
+            if current_best_fitness < 1e-3:
                 print("Converged")
                 return
 
@@ -56,21 +81,22 @@ class GeneticAlgorithm:
             for _ in range(crossover_count):
                 parent1 = self.tournament_selection()
                 parent2 = self.tournament_selection()
-                child = (parent1 + parent2) / 2
+                child = self.double_point_crossover(parent1, parent2)
                 next_generation.append(child)
 
-            for individual in random.sample(self.population, mutation_count):
-                next_generation.append(individual + random.uniform(-self.mutation_scale, self.mutation_scale))
+            for _ in range(mutation_count):
+                individual = random.choice(self.population)
+                next_generation.append(self.mutate(individual))
             
             self.population = next_generation
 
     def best_solution(self):
         best = min(self.population, key=self.fitness)
-        return best, self.func(best)
+        return self.binary_to_float(best), self.func(self.binary_to_float(best))
 
 if __name__ == '__main__':
     def f(x):
-        return 3 * x + 2
+        return x*x -1
 
     ga = GeneticAlgorithm(f, population_size=100, generations=10000, mutation_rate=0.05, crossover_rate=0.7, mutation_scale=2)
     ga.evolve()
