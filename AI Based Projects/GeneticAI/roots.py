@@ -1,13 +1,12 @@
 import random
 
 class GeneticAlgorithm:
-    def __init__(self, func, population_size, generations, mutation_rate, crossover_rate, mutation_scale, bit_length=32):
+    def __init__(self, func, population_size, generations, mutation_rate, crossover_rate, bit_length=32):
         self.func = func
         self.population_size = population_size
         self.generations = generations
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
-        self.mutation_scale = mutation_scale
         self.bit_length = bit_length
         self.population = [self.float_to_binary(random.uniform(-100, 100)) for _ in range(self.population_size)]
         self.fitness_cache = {}
@@ -36,7 +35,7 @@ class GeneticAlgorithm:
         x = self.binary_to_float(binary_x)
         key = self.cache_key(x)
         if key not in self.fitness_cache:
-            self.fitness_cache[key] = max(abs(self.func(x)), round(abs(self.func(x)),3))
+            self.fitness_cache[key] = max(abs(self.func(x)), round(abs(self.func(x)), 1))
         return self.fitness_cache[key]
 
     def tournament_selection(self, k=5):
@@ -54,16 +53,13 @@ class GeneticAlgorithm:
         return ''.join(mutated)
 
     def evolve(self):
-        stagnant_generations = 0
         for generation in range(self.generations):
             self.population.sort(key=self.fitness)
-            
             current_best = min(self.population, key=self.fitness)
+            
             if self.best_ever is None or self.fitness(current_best) < self.fitness(self.best_ever):
                 self.best_ever = current_best
-            else:
-                stagnant_generations += 1
-            
+
             current_best_fitness = self.fitness(current_best)
             if current_best_fitness < 1e-3:
                 print("Converged")
@@ -71,12 +67,15 @@ class GeneticAlgorithm:
 
             elites = list(set(self.population[:self.population_size // 10]))
             next_generation = elites[:]
-
+            
             if generation > 0.8 * self.generations:
                 self.mutation_rate /= 1.1
 
-            crossover_count = int(self.crossover_rate * (self.population_size - len(elites)))
-            mutation_count = self.population_size - len(elites) - crossover_count
+            direct_count = int(0.1 * self.population_size)
+            crossover_count = int(self.crossover_rate * (self.population_size - len(elites) - direct_count))
+            mutation_count = self.population_size - len(elites) - crossover_count - direct_count
+
+            next_generation.extend(self.population[:direct_count])
 
             for _ in range(crossover_count):
                 parent1 = self.tournament_selection()
@@ -94,13 +93,14 @@ class GeneticAlgorithm:
         best = min(self.population, key=self.fitness)
         return self.binary_to_float(best), self.func(self.binary_to_float(best))
 
+
 if __name__ == '__main__':
     def f(x):
-        return x*x -1
+        return x*x - 1
 
-    ga = GeneticAlgorithm(f, population_size=100, generations=10000, mutation_rate=0.05, crossover_rate=0.7, mutation_scale=2)
+    ga = GeneticAlgorithm(f, population_size=100, generations=10000, mutation_rate=0.05, crossover_rate=0.7)
     ga.evolve()
     best, result = ga.best_solution()
 
-    print(f"root: {best}, plugged in: {result}")
-    print(f"round: {round(best,3)}, plugged in: {f(round(best,3))}")
+    print(f"Root: {best}, Value: {result}")
+    print(f"Round: {round(best,3)}, Value: {f(round(best,3))}")
