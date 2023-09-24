@@ -96,9 +96,9 @@ class GeneticAlgorithm:
 
 if __name__ == '__main__':
     def f(x):
-        return x*x - 1
+        return x**5 + x**4 + x**3 + x**2 + x + 1
 
-    ga = GeneticAlgorithm(f, population_size=100, generations=10000, mutation_rate=0.05, crossover_rate=0.7)
+    ga = GeneticAlgorithm(f, population_size=1000, generations=10000, mutation_rate=0.05, crossover_rate=0.7)
     ga.evolve()
     best, result = ga.best_solution()
 
